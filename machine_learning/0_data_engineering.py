@@ -1,12 +1,12 @@
 import pandas as pd
 
-drivers = pd.read_csv("drivers.csv")
-rides_1 = pd.read_csv("rides_1.csv")
-rides_2 = pd.read_csv("rides_2.csv")
-rides_3 = pd.read_csv("rides_3.csv")
-rides_4 = pd.read_csv("rides_4.csv")
-cars = pd.read_csv("cars.csv")
-incidents = pd.read_csv("incidents.csv")
+drivers = pd.read_csv("data/input/drivers.csv")
+rides_1 = pd.read_csv("data/input/rides_1.csv")
+rides_2 = pd.read_csv("data/input/rides_2.csv")
+rides_3 = pd.read_csv("data/input/rides_3.csv")
+rides_4 = pd.read_csv("data/input/rides_4.csv")
+cars = pd.read_csv("data/input/cars.csv")
+incidents = pd.read_csv("data/input/incidents.csv")
 
 rides = pd.concat([rides_1, rides_2, rides_3, rides_4], ignore_index=True)
 
