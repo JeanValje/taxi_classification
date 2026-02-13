@@ -35,7 +35,7 @@ rides["upvotes_total"] = (
 ) 
 
 #Second step: indicate whether a ride is rejected using a boolean variable
-rides["is_rejected"] = (rides["Status"] == "Rejected by the driver")
+rides["is_rejected"] = (rides["status"] == "Rejected by the driver")
 
 #Third step: aggregate data by driver id
 rides_stats = ( 

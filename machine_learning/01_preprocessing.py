@@ -30,7 +30,7 @@ cat_cols = [
 
 #handle_unknown prevents errors if new categories appear in the test dataset that were not present in the training dataset
 #sparse=False returns a dense array, which is easier to convert to a pandas DataFrame
-onehotenc = OneHotEncoder(handle_unknown = "ignore", sparse = False) 
+onehotenc = OneHotEncoder(handle_unknown = "ignore", sparse_output = False) 
 
 #Fit only on train dataset
 onehotenc.fit(train[cat_cols])
