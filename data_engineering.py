@@ -83,4 +83,4 @@ final_cols = [
     "driver_class"
 ]
 
-result[final_cols].to_csv("collected.csv", index = False)
+result[final_cols].to_csv("data/processed/collected.csv", index = False)
