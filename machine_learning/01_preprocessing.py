@@ -18,9 +18,9 @@ train, test_val = train_test_split(
 )
 
 #Fill Nan_Value in age cols with train data to avoid dataleakage 
-avg_age = round(train["age"].mean(), 0)
-train["age"] = train["age"].fillna(avg_age).astype(int)
-test_val["age"] = test_val["age"].fillna(avg_age).astype(int)
+med_age = round(train["age"].median(), 0)
+train["age"] = train["age"].fillna(med_age).astype(int)
+test_val["age"] = test_val["age"].fillna(med_age).astype(int)
 
 #Categorical encoding (OneHotEncoder) for "car_model" and "second_language"
 cat_cols = [

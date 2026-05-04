@@ -11,7 +11,7 @@ incidents = pd.read_csv("data/input/incidents.csv")
 rides = pd.concat([rides_1, rides_2, rides_3, rides_4], ignore_index=True)
 
 # Number of days passed from the last inspection of the driver's car
-today = pd.to_datetime("05-15-2023")
+today = pd.to_datetime("05-15-2023", errors = "coerce")
 cars["last_inspection_date"] = pd.to_datetime(cars["last_inspection_date"])
 cars["days_since_inspection"] = (today - cars["last_inspection_date"]).dt.days.astype(int)
 
