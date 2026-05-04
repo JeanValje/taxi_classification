@@ -35,7 +35,7 @@ model.fit(X_train, y_train)
 val_probs = model.predict_proba(X_val)[:, 1]
 
 best_threshold = 0.5
-best_score = -1
+best_recall = -1
 
 for thresh in np.linspace(0, 1, 101):
     val_preds = (val_probs >= thresh).astype(int)
@@ -43,8 +43,8 @@ for thresh in np.linspace(0, 1, 101):
     precision = precision_score(y_val, val_preds, pos_label = 1)
     score = f1_score(y_val, val_preds, pos_label = 1)
 
-    if score > best_score and  recall >= precision:
-        best_score = score
+    if precision >= 0.5 and  recall >= best_recall:
+        best_recall = recall
         best_threshold = thresh
 
 print("Best threshold found is: ", best_threshold)
